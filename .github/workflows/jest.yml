@@ -1,0 +1,14 @@
+name: Run Jest tests
+on:
+  - pull_request
+jobs:
+  test:
+    name: Jest
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v4
+      - name: 📦 Install dependencies
+        run: yarn
+      - name: 🎭 Run Jest
+        run: yarn --cwd . test
